@@ -1,0 +1,20 @@
+<view class="page">
+    <view class="page__hd">
+        <text class="page__title">{{vote.TITLE}}</text>
+    </view>
+    <view class="page__bd">
+        <view class="section section_gap">
+            <block wx:for="{{vote}}" wx:for-index="idx" wx:for-item="item">
+                <text>{{item.content}}({{item.size}}票)</text>
+                <text wx:if="{{current_vote.detail_id == item.id}}" style="color:red;">(我的选项)</text>
+                <progress percent="{{100*item.size/total_size}}" show-info stroke-width="10"/>
+            </block>
+        </view>
+
+        <view class="btn-area">
+            <view class="button-wrapper">
+            <button type="default" bindtap="back">返回</button>
+            </view>
+        </view>
+    </view>
+</view>
