@@ -1,0 +1,24 @@
+<form class="page" catchsubmit="formSubmit">
+
+  <view class="page__hd">
+      <text class="page__title">{{title}}</text>
+  </view>
+
+  <view class="page__bd">
+      <view class="section section_gap">
+          <radio-group class="radio-group" name="item">
+              <label class="radio" wx:for-items="{{vote}}">
+                  <radio value="{{item.id}}" />"{{item.content}}"
+              </label>
+          </radio-group>
+      </view>
+  </view>
+
+  <view class="btn-area">
+      <view class="button-wrapper">
+        <button type="primary" formType="submit">提交</button>
+        <button type="default" bindtap="showResult">查看</button>
+      </view>
+  </view>
+  
+</form>
